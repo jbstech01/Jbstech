@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog da JBSTech - Notícias e tendências em tecnologia.">
+    <title>Blog - JBSTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .post img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .post {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .post-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .post {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+        .logo:hover {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="img/logo.png" alt="Logo JBSTech" class="logo"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h1>Blog da JBSTech</h1>
+            <p>Confira as últimas notícias e tendências do mundo da tecnologia.</p>
+            
+            <div class="post-grid">
+                <article class="post">
+                    <img src="img/tecnologia.jpg" alt="Imagem sobre tendências tecnológicas">
+                    <h2><a href="https://tivit.com/5-principais-tendencias-tecnologicas-para-2025/" target="_blank" rel="noopener noreferrer">Tendências Tecnológicas para 2025</a></h2>
+                    <p>Descubra as inovações que irão transformar o mercado nos próximos anos.</p>
+                </article>
+
+                <article class="post">
+                    <img src="img/Seguranca.jpg" alt="Imagem sobre cibersegurança">
+                    <h2><a href="https://content.datarain.com.br/cyber-security-para-empresas/" target="_blank" rel="noopener noreferrer">Cibersegurança: Como proteger sua empresa?</a></h2>
+                    <p>Dicas essenciais para manter seus dados seguros e evitar ataques cibernéticos.</p>
+                </article>
+
+                <article class="post">
+                    <img src="img/IA.jpg" alt="Imagem sobre Inteligência Artificial">
+                    <h2><a href="https://icmcjunior.com.br/" target="_blank" rel="noopener noreferrer">Inteligência Artificial no dia a dia</a></h2>
+                    <p>Como a IA está revolucionando diversas áreas e impactando a vida das pessoas.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 JBSTech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+

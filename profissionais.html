@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profissionais - JBSTech</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #15669c;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .profissionais-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .profissionais-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #15669c;
+      font-size: 28px;
+    }
+
+    .profissionais-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .profissional-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* animação suave */
+}
+
+.profissional-card:hover img {
+  transform: scale(1.15); /* aumenta a imagem ao passar o mouse */
+}
+
+
+    .profissional-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .profissional-card h3 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .profissional-card p {
+      margin: 8px 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .contato-btn,
+    .contratar-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 8px 5px 0;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .contato-btn {
+      background-color: #25d366;
+    }
+
+    .contato-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    .contratar-btn {
+      background-color: #15669c;
+    }
+
+    .contratar-btn:hover {
+      background-color: #0d4d75;
+    }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #15669c;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #15669c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0d4d75;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close:hover {
+  color: #333;
+}
+.estrelas {
+  color: #f5c518;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Profissionais Cadastrados</h1>
+  </header>
+
+  <section class="profissionais-section">
+    <h2>Encontre o profissional ideal</h2>
+    <div class="profissionais-grid">
+      
+      <div class="profissional-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de Ana Silva">
+        <h3>Ana Silva</h3>
+        <div class="estrelas">★★★★★</div>
+        <p>Desenvolvedora Front-end</p>
+        <p>Experiência com React, HTML, CSS e JavaScript.</p>
+        <a href="https://wa.me/5581999999999" class="contato-btn" target="_blank">Contato via WhatsApp</a>
+        <a href="#" class="contratar-btn" data-nome="Ana Silva" onclick="abrirModal(this)">Contratar</a>
+      </div>
+      
+      <div class="profissional-card">
+        <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Foto de João Oliveira">
+        <h3>João Oliveira</h3>
+        <div class="estrelas">★★★☆☆</div>
+        <p>Consultor de TI</p>
+        <p>Especialista em infraestrutura e redes corporativas.</p>
+        <a href="https://wa.me/5581988888888" class="contato-btn" target="_blank">Contato via WhatsApp</a>
+        <a href="#" class="contratar-btn" data-nome="João Oliveira" onclick="abrirModal(this)">Contratar</a>
+      </div>
+      
+      <div class="profissional-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto de Maria Costa">
+        <h3>Maria Costa</h3>
+        <div class="estrelas">★★★★☆</div>
+        <p>Analista de Dados</p>
+        <p>Power BI, SQL, Python e Excel avançado.</p>
+        <a href="https://wa.me/5581977777777" class="contato-btn" target="_blank">Contato via WhatsApp</a>
+        <a href="#" class="contratar-btn" data-nome="Maria Costa" onclick="abrirModal(this)">Contratar</a>
+      </div>
+      
+
+      <!-- Adicione mais cards aqui, se desejar -->
+
+    </div>
+  </section>
+</body>
+<!-- Modal de Contratação -->
+<div id="modal-contratar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()">&times;</span>
+    <h2>Contratar Profissional</h2>
+    <form onsubmit="enviarFormulario(event)">
+      <label>Profissional</label>
+      <input type="text" id="modal-nome" name="profissional" readonly>
+    
+      <label>Seu Nome</label>
+      <input type="text" name="nome" required>
+    
+      <label>Seu E-mail</label>
+      <input type="email" name="email" required>
+    
+      <label>Mensagem</label>
+      <textarea name="mensagem" rows="4" placeholder="Descreva sua necessidade..." required></textarea>
+    
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+    
+  </div>
+</div>
+
+<script>
+  function abrirModal(botao) {
+    const nome = botao.getAttribute("data-nome");
+    document.getElementById("modal-nome").value = nome;
+    document.getElementById("modal-contratar").style.display = "flex";
+  }
+
+  function fecharModal() {
+    document.getElementById("modal-contratar").style.display = "none";
+  }
+
+  function enviarFormulario(event) {
+    event.preventDefault(); // Evita envio real
+
+    // (Opcional) Aqui você pode coletar os dados do formulário, se quiser
+    // const nome = document.querySelector('input[name="nome"]').value;
+
+    // Redireciona para a página de obrigado
+    window.location.href = "obrigado.html";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("modal-contratar");
+    if (event.target == modal) {
+      fecharModal();
+    }
+  }
+</script>
+
+</html>
+

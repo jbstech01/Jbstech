@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JBSTech - Especialistas em tecnologia, contratação e prestação de serviços.">
+    <meta name="keywords" content="tecnologia, consultoria, desenvolvimento, suporte">
+    <meta name="author" content="JBSTech">
+    <title>JBSTech - Inovando em Serviços</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #15669c;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(75, 96, 192, 0.5);
+            overflow-y: auto;
+            transition: left 0.3s ease-in-out;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            color: cyan;
+            text-shadow: 0 0 10px cyan;
+            border-radius: 0 10px 10px 0;
+        }
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(32, 141, 243, 0.1);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .sidebar-toggle:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+        .logo:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        }
+        body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-section {
+      padding: 60px 20px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .form-section form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .form-horizontal-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .form-horizontal-group select,
+    .form-horizontal-group button {
+      flex: 1 1 48%;
+      min-width: 150px;
+    }
+
+    .form-horizontal-group select {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-horizontal-group button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #15669c;
+      color: white;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.3s ease;
+    }
+
+    .form-horizontal-group button:hover {
+      background-color: #104e77;
+    }
+
+    #mensagem-sucesso {
+      display: none;
+      color: green;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 480px) {
+      .form-horizontal-group select,
+      .form-horizontal-group button {
+        flex: 1 1 100%;
+      }
+    }
+        .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-float a {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    background-color: #25D366;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.whatsapp-float a:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+.form-row-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.form-row-horizontal select,
+.form-row-horizontal button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-row-horizontal button {
+    background-color: #15669c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-row-horizontal button:hover {
+    background-color: #104e77;
+}
+
+.form-horizontal-group select,
+.form-horizontal-group button {
+    width: auto !important;
+}
+
+
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle">☰</button>
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="img/logo.png" alt="Logo JBSTech" class="logo"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="banner">
+        <img src="img/banner1.jpg" class="active">
+        <img src="img/banner2.jpg">
+        <img src="img/banner3.jpg">
+        <img src="img/banner4.jpg">
+        <div class="banner-text">
+            <h1>Bem-vindo à JBSTech</h1>
+            <p>Soluções tecnológicas inovadoras para empresas de todos os tamanhos.</p>
+            <a href="contato.html" class="cta-button">Solicite um Orçamento</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="servico-grid">
+                <div class="servico-item">
+                    <h3>Consultoria em TI</h3>
+                    <p>Estratégias para otimização de processos e infraestrutura tecnológica.</p>
+                </div>
+                <div class="servico-item">
+                    <h3>Desenvolvimento de Software</h3>
+                    <p>Criação de soluções personalizadas para o seu negócio.</p>
+                </div>
+                <div class="servico-item">
+                    <h3>Suporte Técnico</h3>
+                    <p>Manutenção e suporte contínuo para manter sua operação eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="cadastro">
+        <h2>Cadastre-se na JBSTech</h2>
+        <form id="formCadastro" action="#" method="POST">
+          <input type="text" name="nome" placeholder="Seu nome completo" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <input type="tel" name="telefone" placeholder="Seu telefone (opcional)">
+          <input type="password" name="senha" placeholder="Crie uma senha" required>
+    
+          <div class="form-horizontal-group">
+            <select name="tipo_usuario" required>
+              <option value="">Tipo de cadastro</option>
+              <option value="profissional">Sou Profissional</option>
+              <option value="contratante">Sou Contratante</option>
+            </select>
+            <button type="submit">Cadastrar</button>
+          </div>
+        </form>
+    
+        <p id="mensagem-sucesso">✅ Cadastro realizado com sucesso!</p>
+      </section>
+    
+      <script>
+        const form = document.getElementById("formCadastro");
+        const msg = document.getElementById("mensagem-sucesso");
+      
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          msg.style.display = "block";
+          setTimeout(() => {
+            window.location.href = "login.html";
+          }, 1500); // espera 1.5 segundos para mostrar a mensagem
+        });
+      </script>
+
+    </section>
+    
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <br>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 JBSTech. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="img/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/jbstehoficial" target="_blank">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            const sidebarToggle = document.querySelector(".sidebar-toggle");
+
+            sidebarToggle.addEventListener("mouseenter", function () {
+                sidebar.style.left = "0";
+            });
+
+            sidebar.addEventListener("mouseleave", function () {
+                sidebar.style.left = "-250px";
+            });
+
+            let banners = document.querySelectorAll(".banner img");
+            let currentIndex = 0;
+
+            function showNextImage() {
+                banners[currentIndex].classList.remove("active");
+                currentIndex = (currentIndex + 1) % banners.length;
+                banners[currentIndex].classList.add("active");
+            }
+
+            setInterval(showNextImage, 3000);
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sidebar e banner rotativo (já existentes)
+            const sidebar = document.getElementById("sidebar");
+            const sidebarToggle = document.querySelector(".sidebar-toggle");
+    
+            sidebarToggle.addEventListener("mouseenter", function () {
+                sidebar.style.left = "0";
+            });
+            sidebar.addEventListener("mouseleave", function () {
+                sidebar.style.left = "-250px";
+            });
+    
+            let banners = document.querySelectorAll(".banner img");
+            let currentIndex = 0;
+            function showNextImage() {
+                banners[currentIndex].classList.remove("active");
+                currentIndex = (currentIndex + 1) % banners.length;
+                banners[currentIndex].classList.add("active");
+            }
+            setInterval(showNextImage, 3000);
+    
+            // NOVO: Confirmação do formulário de cadastro
+            const form = document.getElementById("formCadastro");
+            const msg = document.getElementById("mensagem-sucesso");
+    
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Impede o envio tradicional
+                msg.style.display = "block"; // Mostra a mensagem
+                form.reset(); // Limpa os campos
+
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("formCadastro");
+        const msg = document.getElementById("mensagem-sucesso");
+    
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Impede o envio tradicional
+            msg.style.display = "block"; // Mostra a mensagem
+            form.reset(); // Limpa os campos
+        });
+    });
+     </script>
+   <div class="whatsapp-float">
+    <a href="https://wa.me/5581981644896" target="_blank" title="Fale conosco pelo WhatsApp">
+        <img src="img/whatsapp.png" alt="WhatsApp" />
+        <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+</div>
+</body>
+</html>
+
+
+

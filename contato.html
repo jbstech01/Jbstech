@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a JBSTech - Tecnologia e Inovação.">
+    <title>Contato - JBSTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .contato {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .contato:hover {
+            background-color: #e9ecef;
+        }
+        .contato .info, .contato form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+        .contato .info:hover, .contato form:hover {
+            transform: scale(1.02);
+        }
+        .contato .info p {
+            margin: 10px 0;
+        }
+        .contato label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .contato input, .contato textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .contato input:focus, .contato textarea:focus {
+            border-color: #0b5ed7;
+            outline: none;
+        }
+        .contato button {
+            background-color: #0b5ed7;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .contato button:hover {
+            background-color: #063b8a;
+            transform: scale(1.05);
+        }
+        .logo:hover {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="img/logo.png" alt="Logo JBSTech" class="logo"></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contato" class="contato">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Preencha o formulário abaixo e nossa equipe responderá o mais breve possível.</p>
+            
+            <div class="info">
+                <h2>Nossos Contatos</h2>
+                <p><strong>Endereço:</strong> Rua da Inovação, 123 - São Paulo, SP</p>
+                <p><strong>Telefone:</strong> (11) 98765-4321</p>
+                <p><strong>Email:</strong> contato@jbstech.com</p>
+                <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h</p>
+            </div>
+
+            <form action="#" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 JBSTech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
